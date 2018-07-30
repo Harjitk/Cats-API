@@ -34,6 +34,12 @@ var app = function(){
 
 // Refactor the code to make it easy to add a new cat, just like we did with the quotes.
 
+var CATS_ARRAY = [
+  {name: "Ollie", favFood: "Chicken", img: "puppy1.jpg"},
+  {name: "Ben", favFood: "Ham", img: "puppy2.jpg"}
+]
+
+
 var addCat = function(name, favFood, url){
   var list = createList();
   var nameLi = createLi("name", name);
@@ -78,5 +84,12 @@ catSection.appendChild(list);
 var app = function(){
 addCat("Oliie", "Chicken", "puppy1.jpg");
 }
+
+var app = function(){
+  for(var cat of CATS_ARRAY){
+    addCat(cat.name, cat.favFood, cat.img);
+  }
+};
+
 
 window.onload = app
